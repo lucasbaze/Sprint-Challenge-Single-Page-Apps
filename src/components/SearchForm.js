@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { Select, Form, Input, Button } from 'semantic-ui-react';
 
 export default function SearchForm({ onSearch }) {
-  // STRETCH TODO: Add stateful logic for query/form data
-  return (
-    <section className="search-form">
-      <form onSubmit={() => onSearch(name)}>
-        <input
-          onChange={handleInputChange}
-          placeholder="name"
-          value={name}
-          name="name"
-        />
-        <button type="submit">Search</button>
-      </form>
-    </section>
-  );
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleInputChange = e => {
+        setSearchTerm(e.target.value);
+    };
+
+    return (
+        <section className="search-form">
+            <Form onSubmit={() => onSearch(searchTerm)}>
+                <Input
+                    onChange={handleInputChange}
+                    placeholder="Name"
+                    value={searchTerm}
+                    name="searchTerm"
+                />
+                <Button type="submit">Search</Button>
+            </Form>
+        </section>
+    );
 }
