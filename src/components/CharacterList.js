@@ -24,7 +24,7 @@ export default function CharacterList() {
 
     return (
         <section className="character-list grid-view">
-            <Card.Group>
+            <Card.Group centered>
                 {characters.map(character => {
                     let {
                         name,

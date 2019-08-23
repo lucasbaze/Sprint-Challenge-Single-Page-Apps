@@ -17,8 +17,8 @@ main {
 
 .grid-view {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-wrap: row wrap;
+    justify-content: flex-start;
 }
 
 .page-view {
@@ -27,6 +27,10 @@ main {
 
 .grid-view div.card.ui {
     margin: 1.25rem;
+}
+
+.selected {
+    background-color: 'blue';
 }
 /*
 .main-img {
